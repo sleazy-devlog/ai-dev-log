@@ -36,16 +36,16 @@ export const createLog = async (payload: LogPayload): Promise<Log> => {
 };
 
 export const updateLog = async (
-  id: number,
-  payload: LogPayload,
-): Promise<Log> => {
+    id: number,
+    payload: LogPayload,
+  ): Promise<Log> => {
   const response = await fetch(`/api/logs/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
   assertOk(response);
 
   return await response.json() as Log;
